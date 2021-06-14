@@ -6,9 +6,9 @@ local swimSpeed = 0.5
 -- Remove collision mask
 local mask = data.raw.tile["water"].collision_mask
 for i=#mask,1,-1 do
-	if mask[i] == "player-layer" then
-		table.remove(mask, i)
-	end
+    if mask[i] == "player-layer" then
+        table.remove(mask, i)
+    end
 end
 
 -- adjust player and vehicle speed
