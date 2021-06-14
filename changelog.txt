@@ -1,0 +1,13 @@
+v0.17.6
+- (Finally) update to 0.17
+- Add Mod Portal thumbnail
+
+v0.0.6
+- remove splash animation for rail bridges
+
+v0.0.5
+- Tweak graphics
+- More efficient ripple animations
+
+v0.0.4
+- add remote interface [CanalBuilder][exists] for discovery

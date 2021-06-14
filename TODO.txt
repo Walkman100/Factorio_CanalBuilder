@@ -1,0 +1,12 @@
+ISSUES
+- biter slowdown only occurs when taking damage
+- ripple when character in other vehicles (ie trains)
+- Add settings options
+- Desync in multiplayer?
+- speed settings options
+- conflict with new Island (walk on deep water)
+
+SOLUTIONS
+
+OTHER
+- reduce collision box to work near water objects (waterway)
