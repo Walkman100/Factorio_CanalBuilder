@@ -4,15 +4,15 @@
 -- sounds
 data.raw.tile["water"].walking_sound = {
     {
-        filename = "__CanalBuilder__/sounds/water-1.ogg",
+        filename = "__CanalBuilderWLK__/sounds/water-1.ogg",
         volume = 0.8
     },
     {
-        filename = "__CanalBuilder__/sounds/water-2.ogg",
+        filename = "__CanalBuilderWLK__/sounds/water-2.ogg",
         volume = 0.8
     },
     {
-        filename = "__CanalBuilder__/sounds/water-3.ogg",
+        filename = "__CanalBuilderWLK__/sounds/water-3.ogg",
         volume = 0.8
     }
 }
@@ -65,7 +65,7 @@ for i=1,4 do
             show_when_smoke_off = true,
             deviation = {0, 0},
             animation = {
-                filename = "__CanalBuilder__/graphics/ripple" .. i .. ".png",
+                filename = "__CanalBuilderWLK__/graphics/ripple" .. i .. ".png",
                 priority = "extra-high",
                 width = 192,
                 height = 128,

@@ -1,4 +1,4 @@
--- CanalBuilder
+-- CanalBuilderWLK
 -- control
 
 local isWaterTile = {

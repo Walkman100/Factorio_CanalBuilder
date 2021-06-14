@@ -1,4 +1,4 @@
--- CanalBuilder
+-- CanalBuilderWLK
 -- prototypes.waterfill
 
 local function emptyPic()
@@ -23,7 +23,7 @@ end
 local waterfill_item = {
     type = "item",
     name = "waterfill-item",
-    icon = "__CanalBuilder__/graphics/icons/waterfill_small.png",
+    icon = "__CanalBuilderWLK__/graphics/icons/waterfill_small.png",
     icon_size = 32,
     subgroup = "terrain",
     order = "c[landfill]-z-a[water]",
@@ -34,7 +34,7 @@ local waterfill_item = {
 local waterfill = table.deepcopy(data.raw["offshore-pump"]["offshore-pump"])
 local updates = {
     name = "waterfill-placer",
-    icon = "__CanalBuilder__/graphics/icons/waterfill_small.png",
+    icon = "__CanalBuilderWLK__/graphics/icons/waterfill_small.png",
     icon_size = 32,
     picture = emptyPic(),
     collision_mask = {"ground-tile"},
@@ -49,7 +49,7 @@ waterfill.fluid_box.pipe_covers = emptySprites()
 local waterfill_tech = {
     type = "technology",
     name = "waterfill-tech",
-    icon = "__CanalBuilder__/graphics/icons/waterfill_large.png",
+    icon = "__CanalBuilderWLK__/graphics/icons/waterfill_large.png",
     icon_size = 128,
     effects = {
         {

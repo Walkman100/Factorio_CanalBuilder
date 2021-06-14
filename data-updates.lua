@@ -1,4 +1,4 @@
--- CanalBuilder
+-- CanalBuilderWLK
 -- abilities.swimming
 local swimSpeed = 0.5
 
