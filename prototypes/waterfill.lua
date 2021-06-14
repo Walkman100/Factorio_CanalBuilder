@@ -25,6 +25,7 @@ local waterfill_item = {
     name = "waterfill-item",
     icon = "__CanalBuilderWLK__/graphics/icons/waterfill_small.png",
     icon_size = 32,
+    flags = {},
     subgroup = "terrain",
     order = "c[landfill]-z-a[water]",
     stack_size = 100,
