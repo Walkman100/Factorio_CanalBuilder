@@ -79,27 +79,41 @@ local waterfill_item = {
 }
 
 -- entity (placer)
-local waterfill_placer = table.deepcopy(data.raw["offshore-pump"]["offshore-pump"])
-local updates = {
+local waterfill_placer = {
+    type = "offshore-pump",
     name = "waterfill-placer",
     icon = "__CanalBuilderWLK__/graphics/icons/waterfill_small.png",
     icon_size = 32,
     picture = emptyPic(),
     collision_mask = {},
-    collision_box = {{-.2, -.6}, {0.2, 0.3}}
+    collision_box = {{-0.2, -0.6}, {0.2, 0.3}},
+    center_collision_mask = {"water-tile", "object-layer", "player-layer"},
+    flags = {"placeable-neutral", "player-creation", "filter-directions"},
+    fluid = "water",
+    fluid_box = {
+        filter = "water",
+        pipe_connections = {
+            {
+                position = {0, 1},
+                type = "output"
+            }
+        },
+        production_type = "output"
+    },
+    placeable_position_visualization = {
+        priority = "extra-high-no-scale",
+        filename = "__core__/graphics/cursor-boxes-32x32.png",
+        x = 192,
+        height = 64,
+        width = 64,
+        scale = 0.5
+    },
+    pumping_speed = 20,
 }
-
-for k, v in pairs(updates) do
-    waterfill_placer[k] = updates[k]
-end
-waterfill_placer.fluid_box.pipe_covers = emptySprites()
-waterfill_placer.graphics_set = nil -- otherwise picture is ignored
-waterfill_placer.water_reflection = nil
 
 data:extend({
     waterfill_tech,
     waterfill_recipe,
     waterfill_item,
-    waterfill_placer,
-    waterfill_actual
+    waterfill_placer
 })
