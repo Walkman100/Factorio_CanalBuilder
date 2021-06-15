@@ -20,36 +20,7 @@ local function emptySprites()
     }
 end
 
-local waterfill_item = {
-    type = "item",
-    name = "waterfill-item",
-    icon = "__CanalBuilderWLK__/graphics/icons/waterfill_small.png",
-    icon_size = 32,
-    flags = {},
-    subgroup = "terrain",
-    order = "c[landfill]-z-a[water]",
-    stack_size = 100,
-    place_result = "waterfill-placer"
-}
-
-local waterfill = table.deepcopy(data.raw["offshore-pump"]["offshore-pump"])
-local updates = {
-    name = "waterfill-placer",
-    icon = "__CanalBuilderWLK__/graphics/icons/waterfill_small.png",
-    icon_size = 32,
-    picture = emptyPic(),
-    -- collision_mask = {"ground-tile"},
-    collision_mask = {},
-    collision_box = {{-.2, -.6}, {0.2, 0.3}}
-}
-
-for k, v in pairs(updates) do
-    waterfill[k] = updates[k]
-end
-waterfill.fluid_box.pipe_covers = emptySprites()
-waterfill.graphics_set = nil -- otherwise picture is ignored
-waterfill.water_reflection = nil
-
+-- technology
 local waterfill_tech = {
     type = "technology",
     name = "waterfill-tech",
@@ -76,6 +47,7 @@ local waterfill_tech = {
     order = "a"
 }
 
+-- recipe
 local waterfill_recipe = {
     type = "recipe",
     name = "waterfill-recipe",
@@ -93,10 +65,41 @@ local waterfill_recipe = {
     result_count = 1
 }
 
+-- item
+local waterfill_item = {
+    type = "item",
+    name = "waterfill-item",
+    icon = "__CanalBuilderWLK__/graphics/icons/waterfill_small.png",
+    icon_size = 32,
+    flags = {},
+    subgroup = "terrain",
+    order = "c[landfill]-z-a[water]",
+    stack_size = 100,
+    place_result = "waterfill-placer"
+}
+
+-- entity (placer)
+local waterfill_placer = table.deepcopy(data.raw["offshore-pump"]["offshore-pump"])
+local updates = {
+    name = "waterfill-placer",
+    icon = "__CanalBuilderWLK__/graphics/icons/waterfill_small.png",
+    icon_size = 32,
+    picture = emptyPic(),
+    collision_mask = {},
+    collision_box = {{-.2, -.6}, {0.2, 0.3}}
+}
+
+for k, v in pairs(updates) do
+    waterfill_placer[k] = updates[k]
+end
+waterfill_placer.fluid_box.pipe_covers = emptySprites()
+waterfill_placer.graphics_set = nil -- otherwise picture is ignored
+waterfill_placer.water_reflection = nil
+
 data:extend({
-    waterfill,
     waterfill_tech,
     waterfill_recipe,
     waterfill_item,
+    waterfill_placer,
     waterfill_actual
 })
