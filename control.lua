@@ -49,22 +49,32 @@ end
 
 -- waterfill placer handler
 local function replaceDummy(placed)
-    dir    = placed.direction
-    pos    = placed.position
-    surface = placed.surface
+    local dir     = placed.direction
+    local pos     = placed.position
+    local surface = placed.surface
 
     placed.destroy()
     local tileArray = {}
-    local i=1
-    for xo = -1, 1, 1 do
-        for yo = -1, 1, 1 do
+    local i = 1
+
+    if dir == defines.direction.north or dir == defines.direction.south then
+        for x = -1, 1, 1 do
             tileArray[i] = {
                 name = "water",
-                position = {pos.x + xo, pos.y + yo}
+                position = {pos.x + x, pos.y}
+            }
+            i = i + 1
+        end
+    elseif dir == defines.direction.east or dir == defines.direction.west then
+        for y = -1, 1, 1 do
+            tileArray[i] = {
+                name = "water",
+                position = {pos.x, pos.y + y}
             }
             i = i + 1
         end
     end
+
     surface.set_tiles(tileArray)
 end
 
