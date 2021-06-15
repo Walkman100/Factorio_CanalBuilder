@@ -38,7 +38,8 @@ local updates = {
     icon = "__CanalBuilderWLK__/graphics/icons/waterfill_small.png",
     icon_size = 32,
     picture = emptyPic(),
-    collision_mask = {"ground-tile"},
+    -- collision_mask = {"ground-tile"},
+    collision_mask = {},
     collision_box = {{-.2, -.6}, {0.2, 0.3}}
 }
 
@@ -46,6 +47,8 @@ for k, v in pairs(updates) do
     waterfill[k] = updates[k]
 end
 waterfill.fluid_box.pipe_covers = emptySprites()
+waterfill.graphics_set = nil -- otherwise picture is ignored
+waterfill.water_reflection = nil
 
 local waterfill_tech = {
     type = "technology",
@@ -79,8 +82,7 @@ local waterfill_recipe = {
     energy_required = 0.5,
     enabled = false,
     category = "crafting",
-    ingredients =
-    {
+    ingredients = {
         {
             type = "item",
             name = "explosives",
