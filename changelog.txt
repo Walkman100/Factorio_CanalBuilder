@@ -1,4 +1,8 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.8
+  Features:
+    - Added incompatible flag with previous versions of CanalBuilder, as they also define the CanalBuilder interface
+---------------------------------------------------------------------------------------------------
 Version: 1.1.7
   Features:
     - Waterfill now places 1x3 area of water depending on the place direction, instead of 3x3
