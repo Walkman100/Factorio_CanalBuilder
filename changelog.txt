@@ -1,4 +1,8 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.7
+  Features:
+    - Waterfill now places 1x3 area of water depending on the place direction, instead of 3x3
+---------------------------------------------------------------------------------------------------
 Version: 1.1.6
   Features:
     - Update to 1.1.x
