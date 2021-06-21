@@ -60,7 +60,7 @@ local function replaceDummy(placed)
     if dir == defines.direction.north or dir == defines.direction.south then
         for x = -1, 1, 1 do
             tileArray[i] = {
-                name = "water",
+                name = replacement,
                 position = {pos.x + x, pos.y}
             }
             i = i + 1
@@ -68,7 +68,7 @@ local function replaceDummy(placed)
     elseif dir == defines.direction.east or dir == defines.direction.west then
         for y = -1, 1, 1 do
             tileArray[i] = {
-                name = "water",
+                name = replacement,
                 position = {pos.x, pos.y + y}
             }
             i = i + 1
@@ -101,7 +101,7 @@ end
 
 -- biter slowdown handler
 local function damageHandler(event)
-    entity = event.entity
+    local entity = event.entity
     if entity.type == "unit" then
         if entity.force.name == "enemy" and entity.valid then -- if a biter..
             if entity.unit_group ~= nil then -- if in group, slow down all
@@ -138,7 +138,7 @@ script.on_event(
 script.on_event(
     defines.events.on_tick,
     function(event)
-        eTick = event.tick
+        local eTick = event.tick
         if eTick % 120 == 4 then
             for _, player in pairs(game.connected_players) do
                 if player.character then
