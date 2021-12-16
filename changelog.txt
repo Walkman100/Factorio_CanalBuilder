@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.9
+  Features:
+    - Set waterfill placer pumping speed to 1 (60/s) to differentiate from true Offshore Pump in calculators
+    - Added Recipe Cost setting
+---------------------------------------------------------------------------------------------------
 Version: 1.1.8
   Features:
     - Added incompatible flag with previous versions of CanalBuilder, as they also define the CanalBuilder interface
