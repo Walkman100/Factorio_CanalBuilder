@@ -58,7 +58,7 @@ local waterfill_recipe = {
         {
             type = "item",
             name = "explosives",
-            amount = 1
+            amount = settings.startup["canalbuilder-recipe-cost"].value
         },
     },
     result = "waterfill-item",
@@ -108,7 +108,7 @@ local waterfill_placer = {
         width = 64,
         scale = 0.5
     },
-    pumping_speed = 20,
+    pumping_speed = 1,
 }
 
 data:extend({
